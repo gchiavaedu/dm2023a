@@ -1,0 +1,118 @@
+---
+title: 'zero2hero_0101'
+output: html_document
+date: "2023-05-15"
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Zero to Hero
+
+# 1 Arranque rápido
+
+En el capítulo 1 se hará un recorrido por las principales componentes
+del lenguaje R mínimos necesarios para resolver el problema de la
+asignatura, justificando las elecciones tomadas. <br> No es la idea de
+estos notebooks ser un manual del lenguaje R ni tampoco de los paquetes.
+
+## 1.01 Lectura del dataset
+
+Trata sobre la motivacion de utilizar data.table Simplemente se carga el
+dataset y se mide el tiempo que demora, el que es extremadamente alto e
+inexplicable.
+
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = "C:/Users/guido/Desktop/CD03")  #Establezco el Working Directory
+getwd()
+```
+
+Ahora vamos a cargar el dataframe como en R Base, tradicional, pero
+vamos a medir el tiempo para conocer la hora actual utilizo la fucion de
+R Sys.time y para calcular la diferencia utilizo as.numeric( t1 - t0,
+units = "secs") convirtiéndolo a segundos
+
+Primero veo que hace la funcion Sys.time()
+
+```{r}
+Sys.time()
+```
+
+devuelve fecha, hora y huso horario ( -03 para el caso de Argentina)
+<br> Leyendo la documentación en
+<https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/Sys.time>
+veo que la precisión es de 1/60 segundos, lo cual para el tipo de
+medidas que tomaremos es más que suficiente.
+
+```{r}
+t0  <- Sys.time()
+dataset <- read.csv("./datasets/dataset_pequeno.csv")
+
+t1  <- Sys.time()
+delta  <- as.numeric(  t1 - t0, units = "secs")  #calculo la diferencia de tiempos
+print( delta) #imprimo
+```
+
+#### la primer corrida da, en una antigua PC de escritorio con un hdd, 36.4 segundos !
+
+¿Qué tenebrosos cálculos estará haciendo para demorar 36.4 segundos? A
+lo sumo tiene que leer el archivo dos veces, para determinar si un campo
+es numerico o character.
+
+vuelvo a correr lo mismo, quizas hubo un problema de acceso al disco, y
+hasta quizas esta segunda vez el archivo ya esté en la memoria del
+sistema operativo
+
+```{r}
+t0  <- Sys.time()
+dataset <- read.csv("./datasets/dataset_pequeno.csv")
+t1  <- Sys.time()
+delta  <- as.numeric(  t1 - t0, units = "secs")  #calculo la diferencia de tiempos
+print(delta) #imprimo
+```
+
+### la segunda corrida da, en la misma máquina, 30.4 segundos !
+
+Se busca bibliografía sobre que alternativa hay al manejo de dataframes
+del R Base <br> Aparecen varias alternativas, benchmarks muestran la
+superioridad de data.table <br> Pasamos a probar la libreria data.table
+a ver si los becnmarks están en lo cierto, o es solo marketing <br> Si
+no se tiene instalada la libreria, instalarla primero con
+**install.packages( "data.table", dependencies=TRUE )**
+
+```{r}
+library( "data.table")   #cargo la libreria  data.table
+```
+
+```{r}
+t0  <- Sys.time()
+dataset <- fread("./datasets/dataset_pequeno.csv")
+t1  <- Sys.time()
+delta  <- as.numeric(  t1 - t0, units = "secs")  #calculo la diferencia de tiempos
+print(delta) #imprimo
+```
+
+### la primer corrida da 0.79 segundos
+
+Hagamos una segunda corrida
+
+```{r}
+t0  <- Sys.time()
+dataset <- fread("./datasets/dataset_pequeno.csv")
+t1  <- Sys.time()
+delta  <- as.numeric(  t1 - t0, units = "secs")  #calculo la diferencia de tiempos
+print(delta) #imprimo
+```
+
+# la segunda corrida da 1.18 segundos
+
+Esta diferencia, calculada en forma muy burda (sin hacer varios
+experimentos) es alrededor de 30.4 a 1.2 <br> Ciertamente leer un
+dataset es una tarea que se hace unicamente al comienzo de los
+programas, pero se lee en la bibligrafía que data.table funciona más
+rápido para *todas* las operaciones sobre datasets, lo que se confirmará
+en los siguientes capítulos.
+
+Es una verdadera pena que los fans de tidyverse no exploren data.table,
+así como en Python que Pandas sea tan servilmente aceptada.
