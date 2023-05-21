@@ -27,10 +27,10 @@ modelo  <- rpart(formula= "clase_ternaria ~ .",
                  data= dataset[ foto_mes==202107 ,],
                  model= TRUE,
                  xval= 0,
-                 cp=        -0.82,
-                 minsplit= 769,
-                 minbucket=  8,
-                 maxdepth=   6 )
+                 cp=        -0.623524249195116,
+                 minsplit= 1186,
+                 minbucket=  2,
+                 maxdepth=   9)
 
 
 #Grabo el arbol de canaritos
