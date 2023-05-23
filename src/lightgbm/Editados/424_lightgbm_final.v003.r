@@ -22,18 +22,18 @@ PARAM$input$future        <- c( 202109 )   #meses donde se aplica el modelo
 
 PARAM$finalmodel$semilla           <- 108881
 
-PARAM$finalmodel$num_iterations    <-  390
-PARAM$finalmodel$learning_rate     <-    0.0260090188023099
-PARAM$finalmodel$feature_fraction  <-    0.291937555170335
-PARAM$finalmodel$min_data_in_leaf  <-    1104
-PARAM$finalmodel$num_leaves        <-     1023
+PARAM$finalmodel$num_iterations    <-  1178
+PARAM$finalmodel$learning_rate     <-    0.0122585981394193
+PARAM$finalmodel$feature_fraction  <-    0.923160919228287
+PARAM$finalmodel$min_data_in_leaf  <-    1975
+PARAM$finalmodel$num_leaves        <-     430
 
 
 PARAM$finalmodel$max_bin           <-     31
 
-PARAM$finalmodel$min_gain_to_split <- 0.00513920692222492  #línea agregada para agregar min_gain_to_split   1/2
-PARAM$finalmodel$lambda_l1         <- 0.137379834373496  #línea agregada para agregar lambda_1   1/2
-PARAM$finalmodel$lambda_l2         <- 2.94543153115613  #línea agregada para agregar lambda_2   1/2
+PARAM$finalmodel$min_gain_to_split <- 0.016538971159378  #línea agregada para agregar min_gain_to_split   1/2
+PARAM$finalmodel$lambda_l1         <- 2.82036763282415  #línea agregada para agregar lambda_1   1/2
+PARAM$finalmodel$lambda_l2         <- 0.947079525779716  #línea agregada para agregar lambda_2   1/2
 
 
 
