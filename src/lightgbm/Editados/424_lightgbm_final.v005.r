@@ -14,7 +14,7 @@ require("lightgbm")
 #defino los parametros de la corrida, en una lista, la variable global  PARAM
 #  muy pronto esto se leera desde un archivo formato .yaml
 PARAM <- list()
-PARAM$experimento  <- "KA4240.v004"
+PARAM$experimento  <- "KA4240.v005"
 
 PARAM$input$dataset       <- "./datasets/dataset_pequeno.csv"
 PARAM$input$training      <- c( 202107 )   #meses donde se entrena el modelo
@@ -22,18 +22,18 @@ PARAM$input$future        <- c( 202109 )   #meses donde se aplica el modelo
 
 PARAM$finalmodel$semilla           <- 108881
 
-PARAM$finalmodel$num_iterations    <-  390
-PARAM$finalmodel$learning_rate     <-    0.0260090188023099
-PARAM$finalmodel$feature_fraction  <-    0.291937555170335
-PARAM$finalmodel$min_data_in_leaf  <-    1104
-PARAM$finalmodel$num_leaves        <-     1023
+PARAM$finalmodel$num_iterations    <-  145
+PARAM$finalmodel$learning_rate     <-    0.155244653155737
+PARAM$finalmodel$feature_fraction  <-    0.245770759901179
+PARAM$finalmodel$min_data_in_leaf  <-    405
+PARAM$finalmodel$num_leaves        <-     119
 
 
 PARAM$finalmodel$max_bin           <-     31
 
-PARAM$finalmodel$min_gain_to_split <- 0.00513920692222492  #línea agregada para agregar min_gain_to_split   1/2
-PARAM$finalmodel$lambda_l1         <- 0.137379834373496  #línea agregada para agregar lambda_1   1/2
-PARAM$finalmodel$lambda_l2         <- 2.94543153115613  #línea agregada para agregar lambda_2   1/2
+PARAM$finalmodel$min_gain_to_split <- 0.00300553602937059  #línea agregada para agregar min_gain_to_split   1/2
+PARAM$finalmodel$lambda_l1         <- 0.00416461677798217  #línea agregada para agregar lambda_1   1/2
+PARAM$finalmodel$lambda_l2         <- 44.1876195268718  #línea agregada para agregar lambda_2   1/2
 
 
 
