@@ -50,8 +50,8 @@ PARAM$Tendencias2$ratiomax  <- TRUE
 
 
 PARAM$RandomForest$run  <- TRUE
-PARAM$RandomForest$num.trees  <- 300
-PARAM$RandomForest$max.depth  <-  11
+PARAM$RandomForest$num.trees  <- 250
+PARAM$RandomForest$max.depth  <-  10
 PARAM$RandomForest$min.node.size  <- 600
 PARAM$RandomForest$mtry  <- 50
 PARAM$RandomForest$semilla  <- 108881    # cambiar por la propia semilla
