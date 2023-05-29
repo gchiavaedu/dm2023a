@@ -16,17 +16,17 @@ require("yaml")
 
 #Parametros del script
 PARAM  <- list()
-PARAM$experimento <- "G.FE02.TS01.TS6410"
+PARAM$experimento <- "G.FE05.TS02.TS6410"
 
-PARAM$exp_input  <- "G.FE02.FE6310"
+PARAM$exp_input  <- "G.FE05.FE6310"
 
 # me salteo los meses duros de pandemia, pero llego hasta 201907 en training
 # entreno en 18 meses
 
 PARAM$future       <- c( 202109 )
-PARAM$final_train  <- c( 202107, 202106, 202105, 202104, 202103, 202102, 202101, 202012, 202011, 202010, 202009, 202008, 202007, 202006, 202005, 202004, 202003, 202002, 202001, 201912, 201911, 201910, 201909 )
+PARAM$final_train  <- c( 202107, 202106, 202105, 202104, 202103, 202102, 202101, 202012, 202011)
 
-PARAM$train$training     <- c( 202105, 202104, 202103, 202102, 202101, 202012, 202011, 202010, 202009, 202008, 202007, 202006, 202005, 202004, 202003, 202002, 202001, 201912, 201911, 201910, 201909, 201908, 201907 )
+PARAM$train$training     <- c( 202105, 202104, 202103, 202102, 202101, 202012, 202011)
 PARAM$train$validation   <- c( 202106 )
 PARAM$train$testing      <- c( 202107 )
 
