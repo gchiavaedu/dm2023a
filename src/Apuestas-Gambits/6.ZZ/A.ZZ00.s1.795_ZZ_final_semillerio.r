@@ -20,7 +20,7 @@ require("lightgbm")
 
 #Parametros del script
 PARAM  <- list()
-PARAM$experimento  <- "A.ZZ00.HT00.TS00.FE00.DR00.ZZ7950"
+PARAM$experimento  <- "A.ZZ00.s1.HT00.TS00.FE00.DR00.ZZ7950"    #s1 hace referencia a semilla 1, para cada semilla hago uno diferente. Semillas: 108881; 262637; 541447; 678547; 848629
 PARAM$exp_input  <- "A.HT00.TS00.FE00.DR00.HT7510"
 
 PARAM$modelos_rank  <- c( 1 )  #Que modelos quiero, segun su posicion en el ranking e la Bayesian Optimizacion, ordenado por ganancia descendente
