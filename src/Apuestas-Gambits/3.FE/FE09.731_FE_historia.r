@@ -22,7 +22,7 @@ require("lightgbm")
 
 #Parametros del script
 PARAM  <- list()
-PARAM$experimento <- "A.FE07.DR00.FE7310"
+PARAM$experimento <- "A.FE09.DR00.FE7310"
 
 PARAM$exp_input  <- "A.DR00.DR7210"
 
@@ -31,8 +31,7 @@ PARAM$lag2  <- TRUE
 PARAM$lag3  <- TRUE
 
 PARAM$Tendencias1$run  <- TRUE
-PARAM$Tendencias1$ventana  <- 4
-PARAM$Tendencias1$tendencia  <- TRUE
+PARAM$Tendencias1$ventana  <- 8 TRUE
 PARAM$Tendencias1$minimo  <- TRUE
 PARAM$Tendencias1$maximo  <- TRUE
 PARAM$Tendencias1$promedio  <- TRUE
@@ -51,7 +50,7 @@ PARAM$Tendencias2$ratiomax  <- FALSE
 
 PARAM$RandomForest$run  <- TRUE
 PARAM$RandomForest$num.trees  <- 250
-PARAM$RandomForest$max.depth  <-  6
+PARAM$RandomForest$max.depth  <-  8
 PARAM$RandomForest$min.node.size  <- 733
 PARAM$RandomForest$mtry  <- 55
 PARAM$RandomForest$semilla  <- 108881    # cambiar por la propia semilla
