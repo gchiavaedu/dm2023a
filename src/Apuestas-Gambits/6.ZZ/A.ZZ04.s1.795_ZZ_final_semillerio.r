@@ -20,16 +20,16 @@ require("lightgbm")
 
 #Parametros del script
 PARAM  <- list()
-PARAM$experimento  <- "A.ZZ02.s1.HT00.TS00.FE00.DR00.ZZ7950"    #s1 hace referencia a semilla 1, para cada semilla hago uno diferente. Semillas: 108881; 262637; 541447; 678547; 848629
+PARAM$experimento  <- "A.ZZ04.s1.HT00.TS00.FE00.DR00.ZZ7950"    #s1 hace referencia a semilla 1, para cada semilla hago uno diferente. Semillas: 108881; 262637; 541447; 678547; 848629
 PARAM$exp_input  <- "A.HT00.TS00.FE00.DR00.HT7510"          
 
-PARAM$modelos_rank  <- c( 2 )  #Que modelos quiero, segun su posicion en el ranking e la Bayesian Optimizacion, ordenado por ganancia descendente
+PARAM$modelos_rank  <- c( 1, 2 )  #Que modelos quiero, segun su posicion en el ranking e la Bayesian Optimizacion, ordenado por ganancia descendente
 PARAM$semillerio  <- 20   # cantidad de semillas a utilizar en el semillerio, podrian ser 50 o 100 para mayor estabilidad
 PARAM$semilla_primos  <- 108881  # se utiliza para generar el vector de  PARAM$semillerio  semillas
              #Semillas: 108881; 262637; 541447; 678547; 848629
-PARAM$kaggle$envios_desde  <-  9500L
-PARAM$kaggle$envios_hasta  <- 12000L
-PARAM$kaggle$envios_salto  <-   500L
+PARAM$kaggle$envios_desde  <-  10800L
+PARAM$kaggle$envios_hasta  <- 11800L
+PARAM$kaggle$envios_salto  <-   200L
 
 PARAM$graficar$envios_hasta  <- 20000L  #para el caso que deba graficar
 PARAM$graficar$ventana_suavizado  <- 2001L
